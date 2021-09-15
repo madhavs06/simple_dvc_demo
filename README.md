@@ -19,4 +19,14 @@ pip install -r requirements.txt
 
 download the data from
 
-gdrive link
+<gdrive link>
+
+git init
+
+dvc init
+
+dvc ad data_give/winequality.csv
+
+git add .
+
+git commit -m "first commit"
