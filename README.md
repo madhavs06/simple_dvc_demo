@@ -17,9 +17,9 @@ install the req
 pip install -r requirements.txt
 '''
 
-download the data from
+#download the data from
 
-<gdrive link>
+*gdrive link*
 
 git init
 
@@ -31,11 +31,11 @@ git add .
 
 git commit -m "first commit"
 
-updating readme
+#updating readme
 git add . && git commit -m "update Readme.md"
 
 git remote add origin main https://github.com/madhavs06/simple_dvc_demo.git
 git branch -M  main
 
-local changes will reflect in repo
+#local changes will reflect in repo
 git push origin main
