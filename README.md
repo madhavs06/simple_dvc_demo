@@ -42,3 +42,29 @@ git branch -M  main
 #local changes will reflect in repo
 
 git push origin main
+
+
+tox command
+'''bash
+tox
+'''
+
+for rebuilding
+''' bash
+tox -rrequirement
+'''
+
+pytest
+'''bash
+pytest -v
+'''
+
+setup command
+'''bash
+pip install -e .
+'''
+
+build your own package
+'''bash
+python setup.py sdist bdist_wheel
+'''
