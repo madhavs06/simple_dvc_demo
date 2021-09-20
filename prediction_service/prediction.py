@@ -1,4 +1,4 @@
-from flask.wrappers import Response
+# from flask.wrappers import Response
 import yaml
 import os
 import json
@@ -13,7 +13,7 @@ class NotInRange(Exception):
         self.message= message
         super().__init__(self.message)
 
-class NotInColumn(Exception):
+class NotInCols(Exception):
     def __init__(self, message= "Values entered not in columns"):
         self.message= message
         super().__init__(self.message)
@@ -40,18 +40,18 @@ def predict(data):
 
 def get_schema(schema_path= schema_path):
     with open(schema_path) as json_file:
-        config= json.load(json_file)
-    return schema_path
+        schema= json.load(json_file)
+    return schema
 
 def validate_input(dict_request):
     def _validate_cols(col):
         schema = get_schema()
         actual_cols = schema.keys()
         if col not in actual_cols:
-            raise NotInColumn
+            raise NotInCols
     def _validate_values(col, val):
         schema = get_schema()
-        actual_cols = schema.keys()
+        # actual_cols = schema.keys()
         if not (schema[col]["min"] <= float(dict_request[col]) <= schema[col]["max"]):
             raise NotInRange
     for col, val in dict_request.items():

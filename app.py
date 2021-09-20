@@ -19,9 +19,9 @@ def index():
     if request.method == "POST":
         try:
             if request.form:
-                data_req= dict(request.form)
+                dict_req= dict(request.form)
                 # data= [list(map(float, data))]
-                response= prediction.form_response(data_req)
+                response= prediction.form_response(dict_req)
                 return render_template("index.html", response= response)
             elif request.json:
                 response= prediction.api_response(request.json)
